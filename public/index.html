@@ -18,10 +18,11 @@
   <div id="editor" style="height:60vh;"></div>
 
   <div class="controls">
-    <input id="espIP" placeholder="ESP32 IP (e.g. 192.168.1.123)">
+    <input id="espHost" placeholder="ESP32 Hostname (e.g. dubix-esp32)" />
+<input id="espPass" placeholder="OTA Password" type="password" />
     <button onclick="save()">💾 Save</button>
     <button onclick="compile()">⚙️ Compile</button>
-    <button onclick="upload()">📡 OTA Upload</button>
+    <button onclick="uploadCode()">Upload OTA</button>
   </div>
 
   <pre id="log"></pre>
