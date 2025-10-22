@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Dubix ESP32 Web IDE</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs/loader.min.js"></script>
 </head>
 <body>
   <h2>Dubix ESP32 Web IDE</h2>
 
-  <input id="repoUrl" placeholder="Paste GitHub Repo URL" />
-  <button onclick="cloneRepo()">🔁 Clone/Update Repo</button>
+  <div class="controls">
+    <input id="repoUrl" placeholder="Paste GitHub Repo URL">
+    <button onclick="cloneRepo()">🔁 Clone/Update</button>
+  </div>
 
-  <div id="tabs"></div>
+  <div id="tabs" class="tabs"></div>
   <div id="editor" style="height:60vh;"></div>
 
-  <input id="espIP" placeholder="ESP32 IP (e.g. 192.168.1.123)" />
-  <button onclick="compile()">⚙️ Compile</button>
-  <button onclick="upload()">📡 OTA Upload</button>
+  <div class="controls">
+    <input id="espIP" placeholder="ESP32 IP (e.g. 192.168.1.123)">
+    <button onclick="save()">💾 Save</button>
+    <button onclick="compile()">⚙️ Compile</button>
+    <button onclick="upload()">📡 OTA Upload</button>
+  </div>
 
   <pre id="log"></pre>
 
