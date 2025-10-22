@@ -66,13 +66,13 @@ app.post("/compile", (req, res) => {
 
 // === OTA Upload ===
 app.post("/upload", (req, res) => {
-  const { espIP } = req.body;
-  if (!espIP) return res.status(400).send("No ESP32 IP provided");
+  const { hostname, password } = req.body;
+  const cmd = `arduino-cli upload -p network:${hostname}.local --fqbn esp32:esp32:esp32 --auth ${password} ./repo`;
+  console.log("Uploading OTA:", cmd);
 
-  const cmd = `arduino-cli upload --fqbn esp32:esp32:esp32 --upload-tool arduinoOTA -p ${espIP} ${REPO_DIR}`;
-
-  exec(cmd, { maxBuffer: 1024 * 500 }, (err, stdout, stderr) => {
-    res.send(`<pre>${stdout || stderr}</pre>`);
+  exec(cmd, (err, stdout, stderr) => {
+    if (err) return res.json({ success: false, log: stderr });
+    res.json({ success: true, log: stdout });
   });
 });
 
