@@ -3,7 +3,7 @@ body {
   color: white;
   font-family: "Segoe UI", sans-serif;
   margin: 0;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,32 +11,51 @@ body {
 
 h2 {
   margin-bottom: 10px;
-  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 input, button {
-  font-size: 16px;
+  font-size: 15px;
   padding: 10px 15px;
-  margin: 6px;
   border-radius: 10px;
   border: none;
   outline: none;
-}
-
-input {
-  width: 90%;
-  max-width: 400px;
 }
 
 button {
   background: #2196f3;
   color: white;
   font-weight: bold;
-  cursor: pointer;
 }
 
 button:hover {
   background: #1976d2;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tabs button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.tabs button:hover {
+  background: #555;
 }
 
 #editor {
@@ -44,7 +63,6 @@ button:hover {
   max-width: 900px;
   border: 1px solid #333;
   border-radius: 10px;
-  margin-top: 15px;
 }
 
 pre {
