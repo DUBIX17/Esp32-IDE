@@ -1,0 +1,18 @@
+{
+  "name": "esp32-web-ide",
+  "version": "1.0.0",
+  "description": "A mobile-friendly web IDE that clones ESP32 code from GitHub, compiles with Arduino CLI, and uploads via Wi-Fi OTA.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Dubix",
+  "license": "MIT"
+}
